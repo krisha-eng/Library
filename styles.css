@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Mono', monospace;
+}
+body{    
+    /* background-color: rgb(35, 21, 44); */
+    /* background-color: linear-gradient(to bottom, #000066 0%, #003399 100%); */
+}
+h1{
+    /* color: white; */
+}
+#title{
+    font-size: 3em;
+    font-weight: 900;
+}
+.section-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 50px;
+}
+.section-cards div{
+    background-color: rgb(116, 176, 255);
+    border-radius: 1em;
+    padding: 1em;
+    /* margin: 1em; */
+}
