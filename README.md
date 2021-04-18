@@ -1,2 +1,2 @@
 # Library
- Made using Vanilla JS OOP concepts
+  Vanilla JS DOM Manipulation + Object Constructor Functions
