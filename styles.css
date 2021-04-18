@@ -1,28 +1,118 @@
-*{
+:root {
+    --body: #EBF2D0;
+    --border: #666;
+    --header: #47F0B9;
+    --book-card: #faf7e8;
+    --button--new: #E6DE43;
+    --button--new-hover: #E1F2D0;
+    --popup: #d6e0f0;
+    --popup-border: #282a33;
+  }
+  
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'PT Mono', monospace;
+    font-size: 110%;
 }
-body{    
-    /* background-color: rgb(35, 21, 44); */
-    /* background-color: linear-gradient(to bottom, #000066 0%, #003399 100%); */
-}
-h1{
-    /* color: white; */
-}
-#title{
+
+#heading{
     font-size: 3em;
     font-weight: 900;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+header{
+    background-color: var(--header);
+    border-bottom: 2px solid var(--border);
+}
+body{
+    background-color: var(--body);
+}
+#new-btn{
+    padding: 0.5em;
+    font-size: 2em;
+    font-weight: 700;
+    display: block;
+    margin: 1em auto 0em auto;
+    background-color: var(--button--new);
+    border:2px solid var(--border);
+    border-radius: 5px;
+}
+#new-btn:hover{
+    cursor: pointer;
+    background-color: var(--button--new-hover);
 }
 .section-cards{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 50px;
+    grid-gap: 1rem;
+    margin: 2rem;    
 }
-.section-cards div{
-    background-color: rgb(116, 176, 255);
-    border-radius: 1em;
-    padding: 1em;
-    /* margin: 1em; */
+.section-cards-div {
+    background-color: var(--book-card);
+    border: 2px solid var(--border);
+    border-radius: 5px;
+    text-align: center;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+}
+.section-cards-div > * {
+    margin: 20px 0px;
+}
+.section-cards-div > button {
+    margin: 0px 10px 20px 10px;
+}
+.popup {
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    /* aspect-ratio: 1/1; */
+    padding: 1rem;
+    border: 2px solid var(--popup-border);
+    border-radius: 10px;
+    background-color: var(--popup);
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;  
+    /* writing transition here works when the popup is closed as well */
+}
+.popup-active{    
+    transform: translate(-50%, -50%) scale(1);
+}
+form{
+    width: 300px;
+    height: 320px;
+    /* border: 1px solid var(--border); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+form > * {
+    margin: 10px 0px;
+}
+form > input{
+    height: 30px;
+    font-size: 1em;
+    width: 80%;
+}
+@media screen and (max-width: 1200px) {
+    .section-cards{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    } 
+}
+@media screen and (max-width: 600px) {
+    .section-cards{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    } 
 }
